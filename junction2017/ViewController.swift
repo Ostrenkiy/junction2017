@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PromiseKit
 
 class ViewController: UIViewController {
 
@@ -20,6 +21,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func facebooklogin(_ sender: Any) {
+        FBSocialSDKProvider.instance.getAccessInfo().then {
+            (arg) -> Void in
+            
+            let (token, email) = arg
+        }
+    }
+    
 }
 

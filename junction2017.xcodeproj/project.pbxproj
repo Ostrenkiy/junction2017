@@ -12,6 +12,10 @@
 		088749331FC96894000E2BEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 088749311FC96894000E2BEE /* Main.storyboard */; };
 		088749351FC96894000E2BEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 088749341FC96894000E2BEE /* Assets.xcassets */; };
 		088749381FC96894000E2BEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 088749361FC96894000E2BEE /* LaunchScreen.storyboard */; };
+		08E946821FC971B00013C31C /* FBSocialSDKProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E946811FC971B00013C31C /* FBSocialSDKProvider.swift */; };
+		08E946841FC971D50013C31C /* SocialProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E946831FC971D50013C31C /* SocialProvider.swift */; };
+		08E946871FC99DA70013C31C /* SpotifySocialSDKProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E946861FC99DA70013C31C /* SpotifySocialSDKProvider.swift */; };
+		08E946891FC99DB50013C31C /* VKSocialSDKProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E946881FC99DB50013C31C /* VKSocialSDKProvider.swift */; };
 		94B86D0C0B85BF87E94E3E14 /* Pods_junction2017.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60D359D876BB82B7F1DD436E /* Pods_junction2017.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +27,10 @@
 		088749341FC96894000E2BEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		088749371FC96894000E2BEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		088749391FC96894000E2BEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08E946811FC971B00013C31C /* FBSocialSDKProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBSocialSDKProvider.swift; sourceTree = "<group>"; };
+		08E946831FC971D50013C31C /* SocialProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialProvider.swift; sourceTree = "<group>"; };
+		08E946861FC99DA70013C31C /* SpotifySocialSDKProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifySocialSDKProvider.swift; sourceTree = "<group>"; };
+		08E946881FC99DB50013C31C /* VKSocialSDKProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKSocialSDKProvider.swift; sourceTree = "<group>"; };
 		34197454F2D47E3D06B656D3 /* Pods-junction2017.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-junction2017.debug.xcconfig"; path = "Pods/Target Support Files/Pods-junction2017/Pods-junction2017.debug.xcconfig"; sourceTree = "<group>"; };
 		60D359D876BB82B7F1DD436E /* Pods_junction2017.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_junction2017.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8784993D4C113572D956F813 /* Pods-junction2017.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-junction2017.release.xcconfig"; path = "Pods/Target Support Files/Pods-junction2017/Pods-junction2017.release.xcconfig"; sourceTree = "<group>"; };
@@ -67,8 +75,20 @@
 				088749341FC96894000E2BEE /* Assets.xcassets */,
 				088749361FC96894000E2BEE /* LaunchScreen.storyboard */,
 				088749391FC96894000E2BEE /* Info.plist */,
+				08E946851FC990420013C31C /* Social */,
 			);
 			path = junction2017;
+			sourceTree = "<group>";
+		};
+		08E946851FC990420013C31C /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				08E946811FC971B00013C31C /* FBSocialSDKProvider.swift */,
+				08E946831FC971D50013C31C /* SocialProvider.swift */,
+				08E946861FC99DA70013C31C /* SpotifySocialSDKProvider.swift */,
+				08E946881FC99DB50013C31C /* VKSocialSDKProvider.swift */,
+			);
+			path = Social;
 			sourceTree = "<group>";
 		};
 		7EB40F8A08A78DFF3B0F2028 /* Frameworks */ = {
@@ -165,9 +185,26 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-junction2017/Pods-junction2017-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SpotifyLogin/SpotifyLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/VK-ios-sdk/VK_ios_sdk.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpotifyLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VK_ios_sdk.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -215,7 +252,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				088749301FC96894000E2BEE /* ViewController.swift in Sources */,
+				08E946841FC971D50013C31C /* SocialProvider.swift in Sources */,
+				08E946871FC99DA70013C31C /* SpotifySocialSDKProvider.swift in Sources */,
+				08E946821FC971B00013C31C /* FBSocialSDKProvider.swift in Sources */,
 				0887492E1FC96894000E2BEE /* AppDelegate.swift in Sources */,
+				08E946891FC99DB50013C31C /* VKSocialSDKProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

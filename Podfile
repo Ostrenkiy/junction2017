@@ -6,5 +6,11 @@ target 'junction2017' do
   use_frameworks!
 
   # Pods for junction2017
-
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
+  pod 'Alamofire', '~> 4.4'
+  pod 'SwiftyJSON', '3.1.4'
+  pod 'PromiseKit'
+  pod 'SpotifyLogin'
+  pod "VK-ios-sdk"
 end

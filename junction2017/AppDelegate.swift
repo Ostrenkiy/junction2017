@@ -7,6 +7,12 @@
 //
 
 import UIKit
+import SpotifyLogin
+import VK_ios_sdk
+import FBSDKCoreKit
+
+let vkID = 6272981
+let fbID = 317470248755883
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,10 +21,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        SpotifyLogin.shared.configure(clientID: "e81e51ebdb2a4490829ddd25cd30cdae", clientSecret: "0532507a423d43ea888d7404efc7971b", redirectURL: URL(string: "https://example.com")!)
+
         return true
     }
 
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        if VKSdk.processOpen(url, fromApplication: sourceApplication) {
+            return true
+        }
+        if FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation) {
+            return true
+        }
+        if url.scheme == "vk\(vkID)" || url.scheme == "fb\(fbID)" {
+            return true
+        }
+        return false
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
